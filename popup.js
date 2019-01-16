@@ -12,12 +12,22 @@ let sendBtn = document.getElementById('send-btn');
 let messageField = document.getElementById('message')
 let fields = document.querySelectorAll('.field')
 
-
+function formatDate(date) {
+  date = new Date(date)
+  let options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  date = date.toLocaleString("ru", options)
+  return date
+}
 
 function getMessageText (model) {
   let {type, date, address, auto_type, auto_sign} = model
+  date = formatDate(date)
   if (type == 1) {
-    return `${date} на ${address} автомобиль ${auto_type} (Гос номер ${auto_sign}) двигался с нарушением предписания знака 5.15.1 "Направление движения по полосам" создавая тем самым аварийную обстановку. Прошу привлечь к ответственности административной водителей указанных транспортных средств в соответствии с Ч.2 ст.12.16 КоАП и принять меры по предотвращению массового игнорирования дорожных знаков на данном участке дороги`
+    return `${date} по адресу ${address} автомобиль ${auto_type} (Гос номер ${auto_sign}) двигался с нарушением предписания знака 5.15.1 "Направление движения по полосам" создавая тем самым аварийную обстановку. Прошу привлечь к ответственности административной водителей указанных транспортных средств в соответствии с Ч.2 ст.12.16 КоАП и принять меры по предотвращению массового игнорирования дорожных знаков на данном участке дороги`
   }
 }
 
