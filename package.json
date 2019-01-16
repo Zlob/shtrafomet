@@ -1,0 +1,11 @@
+{
+  "name": "gibdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "vamakin <vamakin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "bootstrap-datepicker": "^1.8.0"
+  }
+}
