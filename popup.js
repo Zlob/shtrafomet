@@ -1,15 +1,18 @@
-let modelFields = {
+let model = {
   type: 1,
   date: "",
   address: "",
   auto_type: "",
   auto_sign: "",
-  message: ""
 }
+
+let message = ""
 
 let sendBtn = document.getElementById('send-btn');
 let messageField = document.getElementById('message')
 let fields = document.querySelectorAll('.field')
+
+
 
 function getMessageText (model) {
   let {type, date, address, auto_type, auto_sign} = model
@@ -18,42 +21,46 @@ function getMessageText (model) {
   }
 }
 
+function fillMessage() {
+  message = getMessageText(model)
+  messageField.value = message
+}
+
+function synchronize() {
+  let name = this.id
+  //set model
+  model[name] = this.value
+  //set storage
+  let property = {}
+  property[name] = this.value
+  chrome.storage.local.set(property)
+  //set result
+  fillMessage()
+}
+
 //observe fields changes
 fields.forEach(el => {
-  let name = el.id
-  el.onchange = (() => {
-    model[name] = el.value
-    let property = {}
-    property[name] = el.value
-    chrome.storage.local.set(property)
-    let message = getMessageText(model)
-    model.message = message
-    messageField.value = message
-  })
+  el.onchange = synchronize
+  el.oninput = synchronize
 })
 
 //init model from store
-chrome.storage.local.get([model.keys()], (result) => {
-  for (let key in model.keys()) {
+chrome.storage.local.get(Object.keys(model), (result) => {
+  for (let key in model) {
     model[key] = result[key] || model[key]
     document.querySelector('#'+key).value = model[key]
   }
+  fillMessage()
 })
 
 
-
-
-
-
-messageField.onchange = (el) => {
-  model.message = messageField.value
+messageField.onchange = () => {
+  message = messageField.value
 }
 
-sendBtn.onclick = function (element) {
+sendBtn.onclick = function () {
   chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, model, function (response) {
-      console.log('Done');
-    });
+    chrome.tabs.sendMessage(tabs[0].id, message);
   });
 };
 
