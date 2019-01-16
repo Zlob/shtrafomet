@@ -6,12 +6,12 @@
   "icons": {"128": "icon_128.png"},
   "browser_action": {
     "default_icon": "icon_128.png",
-    "default_popup": "popup.html"
+    "default_popup": "src/html/popup.html"
   },
   "content_scripts": [
     {
       "matches": ["https://xn--90adear.xn--p1ai/request_main"],
-      "js": ["content.js"]
+      "js": ["src/js/content.js"]
     }
   ],
   "permissions": [
