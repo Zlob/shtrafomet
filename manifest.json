@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Помощник ГИБДД",
+  "description": "Расширение облегчает процесс заполнения заявлений на сайте ГИБДД",
+  "version": "1.0.0",
+  "icons": {"128": "icon_128.png"},
+  "browser_action": {
+    "default_icon": "icon_128.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://xn--90adear.xn--p1ai/request_main"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}

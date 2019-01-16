@@ -1,0 +1,26 @@
+body {
+    width: 500px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.header {
+
+}
+
+/*.form-field {*/
+    /*display: flex;*/
+    /*margin: 10px 0 0 0;*/
+/*}*/
+
+/*.form-field > label {*/
+    /*flex: 0 0 25%;*/
+    /*font-weight: bold;*/
+/*}*/
+
+/*.form-field > .field-input {*/
+    /*flex: 0 0 75%;*/
+    /*border: 1px solid black;*/
+/*}*/
