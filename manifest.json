@@ -4,6 +4,7 @@
   "description": "Расширение облегчает процесс заполнения заявлений на сайте ГИБДД",
   "version": "1.0.0",
   "icons": {"128": "icon_128.png"},
+  "options_page": "src/html/options.html",
   "browser_action": {
     "default_icon": "icon_128.png",
     "default_popup": "src/html/popup.html"
