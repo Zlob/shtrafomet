@@ -9,6 +9,7 @@
     "default_icon": "src/img/icon_128.png",
     "default_popup": "src/html/popup.html"
   },
+  "author": "vamakin@gmail.com",
   "content_scripts": [
     {
       "matches": ["https://xn--90adear.xn--p1ai/request_main"],
