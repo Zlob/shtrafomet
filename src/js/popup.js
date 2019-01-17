@@ -1,3 +1,12 @@
+gibddLink = 'https://xn--90adear.xn--p1ai/request_main'
+
+chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+  let url = tabs[0].url;
+  if (url != gibddLink) {
+    window.open(gibddLink, '_blank')
+  }
+});
+
 let model = {
   type: 1,
   date: "",
