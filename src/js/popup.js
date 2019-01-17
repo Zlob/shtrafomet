@@ -80,7 +80,14 @@ messageField.onchange = () => {
 
 sendBtn.onclick = function () {
   chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, {message});
+    chrome.storage.sync.get({
+      second_name: '',
+      first_name: '',
+      middle_name: '',
+      email: '',
+    }, (options) => {
+      chrome.tabs.sendMessage(tabs[0].id, Object.assign({message}, options));
+    })
   });
 };
 
