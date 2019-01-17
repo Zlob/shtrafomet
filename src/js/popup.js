@@ -28,7 +28,6 @@ function formatDate(date) {
     month: 'long',
     day: 'numeric',
   };
-  console.log(date)
   date = date.toLocaleString("ru", options)
   return date
 }
