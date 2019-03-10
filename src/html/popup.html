@@ -2,26 +2,60 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Пддмэн - герой, карающий нарущителей</title>
+    <title>Штрафомёт</title>
     <link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../../node_modules/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
     <link href="../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css"/>
-    <link href="../../popup.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/popup.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" id="content" style="display: none">
         <h5 class="header">Заполнение обращения в ГИБДД</h5>
         <hr>
 
         <div class="fields">
             <div class="form-group row">
+                <label for="second_name" class="col-3 col-form-label col-form-label-sm">Фамилия</label>
+                <div class="col-9">
+                    <input type="text" class="form-control form-control-sm field" id="second_name">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="first_name" class="col-3 col-form-label col-form-label-sm">Имя</label>
+                <div class="col-9">
+                    <input type="text" class="form-control form-control-sm field" id="first_name">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="middle_name" class="col-3 col-form-label col-form-label-sm">Отчество</label>
+                <div class="col-9">
+                    <input type="text" class="form-control form-control-sm field" id="middle_name">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-3 col-form-label col-form-label-sm">Адрес электронной почты</label>
+                <div class="col-9">
+                    <input type="email" class="form-control form-control-sm field" id="email">
+                </div>
+            </div>
+
+            <div class="form-group row">
                 <label for="type" class="col-3 col-form-label col-form-label-sm">Тип нарушения</label>
                 <div class="col-9">
                     <select name="type" class="form-control form-control-sm field" id="type">
-                        <option value="1">Движение не по знакам</option>
+                        <option value="1">Поворот налево/разворот в нарушение требований дорожных знаков/разметки</option>
+                        <option value="2">Поворот направо/движение прямо в нарушение требований дорожных знаков/разметки</option>
+                        <option value="3">Поворот не из крайнего положения</option>
+                        <option value="4">Парковка на тротуаре</option>
+                        <option value="5">Парковка на пешеходном переходе</option>
+                        <option value="6">Парковка менее чем за 5 метров до пешеходного перехода</option>
                     </select>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="date" class="col-3 col-form-label col-form-label-sm">Дата</label>
                 <div class="col-9">
