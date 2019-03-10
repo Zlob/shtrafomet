@@ -3,9 +3,12 @@
   "name": "Штрафомёт",
   "description": "Расширение облегчает процесс заполнения заявлений о нарушениях ПДД на сайте ГИБДД",
   "version": "1.0.0",
-  "icons": {"128": "src/img/icon_128.png"},
+  "icons": {
+    "16": "src/img/16.png",
+    "48": "src/img/48.png",
+    "128": "src/img/128.png"
+  },
   "browser_action": {
-    "default_icon": "src/img/icon_128.png",
     "default_popup": "src/html/popup.html"
   },
   "author": "vamakin@gmail.com",
